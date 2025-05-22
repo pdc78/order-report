@@ -6,11 +6,11 @@ namespace OrderReportFunction.Services;
 public class OrderService : IOrderService
 {
 
-    private readonly IConfiguration _config;
+    private readonly string _connectionStrings;
 
     public OrderService(IConfiguration config)
     {
-        _config = config;
+        _connectionStrings= config["ConnectionStrings:OrdersDb"] ?? throw new ArgumentNullException(nameof(config), "SendGridApiKey is missing in configuration.");
     }
 
     public async Task<List<UserReport>> GetMonthlyUserReportsAsync(DateTime month)
