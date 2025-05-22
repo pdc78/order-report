@@ -22,7 +22,7 @@ public class PdfGenerator : IPdfGenerator
 
         foreach (var order in report.Orders)
         {
-            var line = $"Order ID: {order.OrderId} | Total: {order.TotalPrice:C} | VAT: {order.VAT:C} | Total with VAT: {order.TotalWithVAT:C}";
+            var line = $"Order ID: {order.OrderId}  | TransactionId: {order.TransactionId:C} | Total: {order.TotalPrice:C} | VAT: {order.VAT:C} | Total with VAT: {order.TotalWithVAT:C}";
             gfx.DrawString(line, font, XBrushes.Black, new XRect(40, y, page.Width - 80, page.Height), XStringFormats.TopLeft);
             y += 25;
         }

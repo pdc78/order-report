@@ -16,8 +16,8 @@ public class MockOrderService : IOrderService
                 UserEmail = "test1@test.com",
                 Orders = new List<Order>
                 {
-                    new Order { OrderId = "MOCK-001", TotalPrice = 100, VAT = 25 },
-                    new Order { OrderId = "MOCK-002", TotalPrice = 200, VAT = 50 }
+                    new Order { OrderId = "MOCK-001", TotalPrice = 100, VAT = 25, TransactionId = "T-001"},
+                    new Order { OrderId = "MOCK-002", TotalPrice = 200, VAT = 50, TransactionId = "T-002" }
                 }
             },
             new UserReport
@@ -25,8 +25,8 @@ public class MockOrderService : IOrderService
                 UserEmail = "test2@test.com",
                 Orders = new List<Order>
                 {
-                    new Order { OrderId = "MOCK-001", TotalPrice = 100, VAT = 25 },
-                    new Order { OrderId = "MOCK-002", TotalPrice = 200, VAT = 50 }
+                    new Order { OrderId = "MOCK-001", TotalPrice = 100, VAT = 25 , TransactionId = "T-001"},
+                    new Order { OrderId = "MOCK-002", TotalPrice = 200, VAT = 50 , TransactionId = "T-002" }
                 }
             }
         };
