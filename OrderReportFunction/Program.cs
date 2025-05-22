@@ -20,7 +20,6 @@ builder.Services.AddScoped<IOrderService>(provider =>
     : new OrderService(config);
 });
 
-
 builder.Services.AddScoped<IEmailService>(provider =>
 {
     var config = provider.GetRequiredService<IConfiguration>();
@@ -30,6 +29,7 @@ builder.Services.AddScoped<IEmailService>(provider =>
     ? new MockEmailService()
     : new SendGridEmailService(config);
 });
+
 builder.Services.AddScoped<IPdfGenerator, PdfGenerator>();
 
 builder.Build().Run();

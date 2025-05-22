@@ -13,7 +13,16 @@ public class MockOrderService : IOrderService
         {
             new UserReport
             {
-                UserEmail = "decaro.pietro@gmail.com",
+                UserEmail = "test1@test.com",
+                Orders = new List<Order>
+                {
+                    new Order { OrderId = "MOCK-001", TotalPrice = 100, VAT = 25 },
+                    new Order { OrderId = "MOCK-002", TotalPrice = 200, VAT = 50 }
+                }
+            },
+            new UserReport
+            {
+                UserEmail = "test2@test.com",
                 Orders = new List<Order>
                 {
                     new Order { OrderId = "MOCK-001", TotalPrice = 100, VAT = 25 },
