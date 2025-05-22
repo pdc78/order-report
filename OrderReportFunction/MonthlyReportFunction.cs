@@ -34,8 +34,8 @@ namespace OrderReportFunction
 
             if (!IsLastDayOfMonth(today))
             {
-
                 _logger.LogInformation("Today is not the last day of the month. Exiting.");
+                // return;
             }
 
             _logger.LogInformation("Today is the last day of the month. Proceeding with the task.");
@@ -47,6 +47,15 @@ namespace OrderReportFunction
                 foreach (var report in reports)
                 {
                     var pdf = _pdfGenerator.GenerateUserReport(report);
+
+                    if (pdf != null && pdf.Length > 0)
+                    {
+                        _logger.LogInformation($"PDF generated successfully, size: {pdf.Length} bytes");
+                    }
+                    else
+                    {
+                        _logger.LogInformation($"PDF generation failed or returned empty");
+                    }
                     var fileName = $"MonthlyReport_{today:yyyy_MM}_{report.UserEmail.Replace("@", "_at_")}.pdf";
 
                     await _emailService.SendReportAsync(report.UserEmail, pdf, fileName);

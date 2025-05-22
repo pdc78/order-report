@@ -12,28 +12,24 @@ builder.ConfigureFunctionsWebApplication();
 
 builder.Services.AddScoped<IOrderService>(provider =>
 {
-    var config = provider.GetRequiredService<IConfiguration>();
-    var useMock = config.GetValue<bool>("UseMockData");
+    var config = provider.GetRequiredService<IConfiguration>();
+    var useMock = config.GetValue<bool>("UseMockData");
 
-    return useMock
-        ? new MockOrderService()
-        : new OrderService(config);
+    return useMock
+    ? new MockOrderService()
+    : new OrderService(config);
 });
 
 
 builder.Services.AddScoped<IEmailService>(provider =>
 {
-    var config = provider.GetRequiredService<IConfiguration>();
-    var useMock = config.GetValue<bool>("UseMockData");
+    var config = provider.GetRequiredService<IConfiguration>();
+    var useMock = config.GetValue<bool>("UseMockData");
 
-    return useMock
-        ? new MockEmailService()
-        : new SendGridEmailService(config);
+    return useMock
+    ? new MockEmailService()
+    : new SendGridEmailService(config);
 });
-
-// Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
-// builder.Services
-//     .AddApplicationInsightsTelemetryWorkerService()
-//     .ConfigureFunctionsApplicationInsights();
+builder.Services.AddScoped<IPdfGenerator, PdfGenerator>();
 
 builder.Build().Run();
