@@ -8,6 +8,12 @@ public class PdfGenerator : IPdfGenerator
 {
     public byte[] GenerateUserReport(UserReport report)
     {
+        if (report == null)
+            throw new ArgumentNullException(nameof(report));
+
+        if (report.Orders == null)
+            throw new ArgumentNullException(nameof(report.Orders));
+
         using var document = new PdfDocument();
         var page = document.AddPage();
         var gfx = XGraphics.FromPdfPage(page);

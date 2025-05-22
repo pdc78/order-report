@@ -8,6 +8,7 @@ public class SendGridEmailService : IEmailService
 {
     private readonly string _apiKey;
     private readonly string _fromEmail;
+    private readonly SendGridClient _client;
 
     public SendGridEmailService(IConfiguration config)
     {
@@ -15,9 +16,11 @@ public class SendGridEmailService : IEmailService
         _fromEmail = config["FromEmail"] ?? throw new ArgumentNullException(nameof(config), "FromEmail is missing in configuration.");
     }
 
+    protected virtual SendGridClient CreateClient() => new SendGridClient(_apiKey);
+
     public async Task SendReportAsync(string toEmail, byte[] pdfBytes, string fileName)
     {
-        var client = new SendGridClient(_apiKey);
+        var client = CreateClient();
         var from = new EmailAddress(_fromEmail, "Monthly Reports");
         var to = new EmailAddress(toEmail);
         var subject = "Your Monthly Order Report";
