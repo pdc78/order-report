@@ -4,16 +4,16 @@
 
 **OrderReportFunction** is an Azure Function designed to run at the **end of each month**. Its purpose is to:
 
-- Retrieve a list of orders made in the current month from a database or API.
+- Retrieve a list of orders with trunsuction made in the current month from a database or API.
 - Each order contains details such as:
   - Order ID
   - Total Price
   - VAT
   - Total Price including VAT
+  - Trunsaction Id
 - Aggregate orders per user to create a monthly report.
 - Generate a PDF report summarizing each user's orders.
 - Send the PDF report via email with the generated PDF attached.
-
 ---
 
 ## Solution Structure
