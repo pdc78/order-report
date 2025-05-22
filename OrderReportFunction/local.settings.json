@@ -1,0 +1,11 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+        "UseMockData": "true",
+        "ConnectionStrings__OrdersDb": "Server=localhost;Database=OrdersDb;User Id=sa;Password=yourStrong(!)Password;",
+        "SendGridApiKey": "your-sendgrid-api-key",
+        "FromEmail": "noreply@yourdomain.com"
+    }
+}
