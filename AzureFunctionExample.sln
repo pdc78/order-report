@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{52BB585B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net9.0", "net9.0", "{58D650A7-F395-556E-9684-87FA24EFDD07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerExtensions", "OrderReportFunction\obj\Debug\net9.0\WorkerExtensions\WorkerExtensions.csproj", "{C36D5425-8581-4475-C485-3A51D46FC4CD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,10 +22,6 @@ Global
 		{1BB502EC-744E-E683-C6A4-50BEED60A6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BB502EC-744E-E683-C6A4-50BEED60A6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BB502EC-744E-E683-C6A4-50BEED60A6BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C36D5425-8581-4475-C485-3A51D46FC4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C36D5425-8581-4475-C485-3A51D46FC4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C36D5425-8581-4475-C485-3A51D46FC4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C36D5425-8581-4475-C485-3A51D46FC4CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,7 +30,6 @@ Global
 		{B4A00C61-20BE-389E-AB93-3AFD2CECF315} = {FC510396-4B2F-78A2-9039-4EF548316A94}
 		{52BB585B-6D4E-99B9-E446-DEF3E00B20FD} = {B4A00C61-20BE-389E-AB93-3AFD2CECF315}
 		{58D650A7-F395-556E-9684-87FA24EFDD07} = {52BB585B-6D4E-99B9-E446-DEF3E00B20FD}
-		{C36D5425-8581-4475-C485-3A51D46FC4CD} = {58D650A7-F395-556E-9684-87FA24EFDD07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E23ECADE-18B3-44D2-A510-1464F52EF35B}
