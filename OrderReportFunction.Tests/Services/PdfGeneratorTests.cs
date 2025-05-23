@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using OrderReportFunction.Models;
+﻿using OrderReportFunction.Models;
 using OrderReportFunction.Services;
-using System.Collections.Generic;
 
 namespace OrderReportFunction.Tests.Services;
 public class PdfGeneratorTests
